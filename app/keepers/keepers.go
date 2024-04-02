@@ -304,7 +304,7 @@ func (appKeepers *AppKeepers) InitNormalKeepers(
 		appKeepers.GetSubspace(transfermiddlewaretypes.ModuleName),
 		appCodec,
 		&appKeepers.RatelimitKeeper,
-		&appKeepers.TransferKeeper.Keeper,
+		&appKeepers.TransferKeeper, //the solution to introduce the transfer keeper to the middleware
 		appKeepers.BankKeeper,
 		authorityAddress,
 	)
@@ -319,7 +319,7 @@ func (appKeepers *AppKeepers) InitNormalKeepers(
 		appCodec,
 		appKeepers.keys[routertypes.StoreKey],
 		appKeepers.GetSubspace(routertypes.ModuleName),
-		appKeepers.TransferKeeper.Keeper,
+		appKeepers.TransferKeeper,
 		appKeepers.IBCKeeper.ChannelKeeper,
 		&appKeepers.DistrKeeper,
 		appKeepers.BankKeeper,
@@ -408,7 +408,7 @@ func (appKeepers *AppKeepers) InitNormalKeepers(
 		appKeepers.IBCKeeper.ChannelKeeper,
 		&appKeepers.IBCKeeper.PortKeeper,
 		appKeepers.ScopedWasmKeeper,
-		appKeepers.TransferKeeper.Keeper,
+		appKeepers.TransferKeeper,
 		bApp.MsgServiceRouter(),
 		bApp.GRPCQueryRouter(),
 		wasmDir,
