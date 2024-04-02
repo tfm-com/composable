@@ -315,6 +315,18 @@ func (appKeepers *AppKeepers) InitNormalKeepers(
 		authorityAddress,
 	)
 
+	appKeepers.RouterKeeper = routerkeeper.NewKeeper(
+		appCodec,
+		appKeepers.keys[routertypes.StoreKey],
+		appKeepers.GetSubspace(routertypes.ModuleName),
+		appKeepers.TransferKeeper.Keeper,
+		appKeepers.IBCKeeper.ChannelKeeper,
+		&appKeepers.DistrKeeper,
+		appKeepers.BankKeeper,
+		appKeepers.TransferMiddlewareKeeper,
+		appKeepers.IBCKeeper.ChannelKeeper,
+	)
+
 	appKeepers.TransferKeeper = customibctransferkeeper.NewKeeper(
 		appCodec, appKeepers.keys[ibctransfertypes.StoreKey],
 		appKeepers.GetSubspace(ibctransfertypes.ModuleName),
@@ -327,17 +339,7 @@ func (appKeepers *AppKeepers) InitNormalKeepers(
 		&appKeepers.IbcTransferMiddlewareKeeper,
 	)
 
-	appKeepers.RouterKeeper = routerkeeper.NewKeeper(
-		appCodec,
-		appKeepers.keys[routertypes.StoreKey],
-		appKeepers.GetSubspace(routertypes.ModuleName),
-		appKeepers.TransferKeeper.Keeper,
-		appKeepers.IBCKeeper.ChannelKeeper,
-		&appKeepers.DistrKeeper,
-		appKeepers.BankKeeper,
-		appKeepers.TransferMiddlewareKeeper,
-		appKeepers.IBCKeeper.ChannelKeeper,
-	)
+	appKeepers.RouterKeeper.SetTransferKeeper(appKeepers.TransferKeeper)
 
 	appKeepers.RatelimitKeeper = *ratelimitmodulekeeper.NewKeeper(
 		appCodec,
