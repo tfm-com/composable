@@ -304,7 +304,7 @@ func (appKeepers *AppKeepers) InitNormalKeepers(
 		appKeepers.GetSubspace(transfermiddlewaretypes.ModuleName),
 		appCodec,
 		&appKeepers.RatelimitKeeper,
-		&appKeepers.TransferKeeper, //the solution to introduce the transfer keeper to the middleware
+		&appKeepers.TransferKeeper,
 		appKeepers.BankKeeper,
 		authorityAddress,
 	)
