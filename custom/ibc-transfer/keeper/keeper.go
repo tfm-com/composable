@@ -116,5 +116,5 @@ func (k Keeper) Transfer(goCtx context.Context, msg *types.MsgTransfer) (*types.
 			msg.Token.Amount = newAmount
 		}
 	}
-	return k.Transfer(goCtx, msg)
+	return k.Keeper.Transfer(goCtx, msg)
 }
