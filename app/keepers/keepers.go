@@ -337,6 +337,7 @@ func (appKeepers *AppKeepers) InitNormalKeepers(
 		appKeepers.BankKeeper,
 		appKeepers.ScopedTransferKeeper,
 		&appKeepers.IbcTransferMiddlewareKeeper,
+		&appKeepers.BankKeeper,
 	)
 
 	appKeepers.RouterKeeper.SetTransferKeeper(appKeepers.TransferKeeper)
