@@ -113,8 +113,7 @@ import (
 )
 
 const (
-	AccountAddressPrefix = "composable"
-	authorityAddress     = "centauri10556m38z4x6pqalr9rl5ytf3cff8q46nk85k9m" // convert from: centauri10556m38z4x6pqalr9rl5ytf3cff8q46nk85k9m
+	authorityAddress = "pica10556m38z4x6pqalr9rl5ytf3cff8q46nf36090" // convert from: centauri10556m38z4x6pqalr9rl5ytf3cff8q46nk85k9m
 )
 
 type AppKeepers struct {
@@ -180,7 +179,8 @@ func (appKeepers *AppKeepers) InitNormalKeepers(
 ) {
 	// add keepers
 	appKeepers.AccountKeeper = authkeeper.NewAccountKeeper(
-		appCodec, appKeepers.keys[authtypes.StoreKey], authtypes.ProtoBaseAccount, maccPerms, AccountAddressPrefix, authtypes.NewModuleAddress(govtypes.ModuleName).String(),
+		appCodec, appKeepers.keys[authtypes.StoreKey], authtypes.ProtoBaseAccount, maccPerms,
+		sdk.GetConfig().GetBech32AccountAddrPrefix(), authtypes.NewModuleAddress(govtypes.ModuleName).String(),
 	)
 
 	appKeepers.BankKeeper = custombankkeeper.NewBaseKeeper(
@@ -196,14 +196,11 @@ func (appKeepers *AppKeepers) InitNormalKeepers(
 
 	appKeepers.StakingMiddlewareKeeper = stakingmiddleware.NewKeeper(appCodec, appKeepers.keys[stakingmiddlewaretypes.StoreKey], authtypes.NewModuleAddress(govtypes.ModuleName).String())
 	appKeepers.IbcTransferMiddlewareKeeper = ibctransfermiddleware.NewKeeper(appCodec, appKeepers.keys[ibctransfermiddlewaretypes.StoreKey], authtypes.NewModuleAddress(govtypes.ModuleName).String(),
-		[]string{"centauri1ay9y5uns9khw2kzaqr3r33v2pkuptfnnr93j5j",
-			"centauri14lz7gaw92valqjearnye4shex7zg2p05mlx9q0",
-			"centauri1r2zlh2xn85v8ljmwymnfrnsmdzjl7k6w6lytan",
-			"centauri10556m38z4x6pqalr9rl5ytf3cff8q46nk85k9m",
-
-			// "centauri1wkjvpgkuchq0r8425g4z4sf6n85zj5wtmqzjv9",
-
-			// "centauri1hj5fveer5cjtn4wd6wstzugjfdxzl0xpzxlwgs",
+		[]string{
+			"pica1ay9y5uns9khw2kzaqr3r33v2pkuptfnnunlt5x",
+			"pica14lz7gaw92valqjearnye4shex7zg2p05yfguqm",
+			"pica1r2zlh2xn85v8ljmwymnfrnsmdzjl7k6w9f2ja8",
+			"pica10556m38z4x6pqalr9rl5ytf3cff8q46nf36090",
 		})
 
 	appKeepers.StakingKeeper = customstaking.NewKeeper(
