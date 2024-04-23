@@ -303,6 +303,7 @@ func (appKeepers *AppKeepers) InitNormalKeepers(
 		&appKeepers.RatelimitKeeper,
 		&appKeepers.TransferKeeper,
 		appKeepers.BankKeeper,
+		&appKeepers.IbcTransferMiddlewareKeeper,
 		authorityAddress,
 	)
 
