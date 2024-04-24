@@ -236,7 +236,7 @@ func (keeper Keeper) GetTotalEscrowedToken(ctx sdk.Context) (coins sdk.Coins) {
 	return coins
 }
 
-func (keeper Keeper) RefundChannelCosmosFee(ctx sdk.Context, sender sdk.AccAddress, receiver sdk.AccAddress, amount sdk.Coins) error {
+func (keeper Keeper) RefundChannelCosmosFee(ctx sdk.Context, sender, receiver sdk.AccAddress, amount sdk.Coins) error {
 	if err := keeper.bankKeeper.SendCoins(ctx, sender, receiver, amount); err != nil {
 		return errorsmod.Wrap(err, "failed to refund channel cosmos fee")
 	}

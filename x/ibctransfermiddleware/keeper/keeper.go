@@ -65,7 +65,7 @@ func (k Keeper) GetParams(ctx sdk.Context) (p types.Params) {
 	return p
 }
 
-func (k Keeper) GetCoin(ctx sdk.Context, targetChannelID string, denom string) *types.CoinItem {
+func (k Keeper) GetCoin(ctx sdk.Context, targetChannelID, denom string) *types.CoinItem {
 	params := k.GetParams(ctx)
 	channelFee := findChannelParams(params.ChannelFees, targetChannelID)
 	if channelFee == nil {
