@@ -57,6 +57,7 @@ func NewKeeper(
 func (k Keeper) Transfer(goCtx context.Context, msg *types.MsgTransfer) (*types.MsgTransferResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
 	params := k.IbcTransfermiddleware.GetParams(ctx)
+	charge_coin := sdk.NewCoin("", sdk.ZeroInt())
 	if params.ChannelFees != nil && len(params.ChannelFees) > 0 {
 		channelFee := findChannelParams(params.ChannelFees, msg.SourceChannel)
 		if channelFee != nil {
@@ -103,7 +104,8 @@ func (k Keeper) Transfer(goCtx context.Context, msg *types.MsgTransfer) (*types.
 				return nil, err
 			}
 
-			send_err := k.bank.SendCoins(ctx, msgSender, feeAddress, sdk.NewCoins(sdk.NewCoin(msg.Token.Denom, charge)))
+			charge_coin = sdk.NewCoin(msg.Token.Denom, charge)
+			send_err := k.bank.SendCoins(ctx, msgSender, feeAddress, sdk.NewCoins(charge_coin))
 			if send_err != nil {
 				return nil, send_err
 			}
@@ -114,5 +116,9 @@ func (k Keeper) Transfer(goCtx context.Context, msg *types.MsgTransfer) (*types.
 			msg.Token.Amount = newAmount
 		}
 	}
-	return k.Keeper.Transfer(goCtx, msg)
+	ret, err := k.Transfer(goCtx, msg)
+	if err != nil || !charge_coin.IsZero() {
+		k.IbcTransfermiddleware.SetSequenceFee(ctx, ret.Sequence, charge_coin)
+	}
+	return ret, err
 }
