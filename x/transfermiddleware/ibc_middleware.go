@@ -165,6 +165,8 @@ func (im IBCMiddleware) OnAcknowledgementPacket(
 		return err
 	}
 
+	im.keeper.IbcTransfermiddleware.DeleteSequenceFee(ctx, packet.Sequence)
+
 	return nil
 }
 
