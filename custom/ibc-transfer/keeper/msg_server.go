@@ -56,7 +56,16 @@ func (k msgServer) Transfer(goCtx context.Context, msg *types.MsgTransfer) (*typ
 			if coin == nil {
 				return nil, fmt.Errorf("token not allowed to be transferred in this channel")
 			}
+
 			minFee := coin.MinFee.Amount
+			priority := GetPriority(msg.Memo)
+			if priority != nil {
+				p := findPriority(coin.TxPriorityFee, *priority)
+				if p != nil && coin.MinFee.Denom == p.PriorityFee.Denom {
+					minFee = minFee.Add(p.PriorityFee.Amount)
+				}
+			}
+
 			charge := minFee
 			if charge.GT(msg.Token.Amount) {
 				charge = msg.Token.Amount
