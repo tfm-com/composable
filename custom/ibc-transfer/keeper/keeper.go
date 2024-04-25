@@ -116,7 +116,7 @@ func (k Keeper) Transfer(goCtx context.Context, msg *types.MsgTransfer) (*types.
 			msg.Token.Amount = newAmount
 		}
 	}
-	ret, err := k.Transfer(goCtx, msg)
+	ret, err := k.Keeper.Transfer(goCtx, msg)
 	if err == nil && ret != nil && !charge_coin.IsZero() {
 		k.IbcTransfermiddleware.SetSequenceFee(ctx, ret.Sequence, charge_coin)
 	}
