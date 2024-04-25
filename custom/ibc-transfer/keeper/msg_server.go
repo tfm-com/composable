@@ -93,7 +93,7 @@ func (k msgServer) Transfer(goCtx context.Context, msg *types.MsgTransfer) (*typ
 		}
 	}
 	ret, err := k.msgServer.Transfer(goCtx, msg)
-	if err != nil || !charge_coin.IsZero() {
+	if err == nil && ret != nil && !charge_coin.IsZero() {
 		k.IbcTransfermiddleware.SetSequenceFee(ctx, ret.Sequence, charge_coin)
 	}
 	return ret, err
