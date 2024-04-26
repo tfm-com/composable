@@ -30,8 +30,8 @@ func GetSequenceKey(sequence uint64) []byte {
 	return append(SequenceFeeKey, []byte(strconv.FormatUint(sequence, 10))...)
 }
 
-func MustMarshalCoin(cdc codec.BinaryCodec, validator *types.Coin) []byte {
-	return cdc.MustMarshal(validator)
+func MustMarshalCoin(cdc codec.BinaryCodec, coin *types.Coin) []byte {
+	return cdc.MustMarshal(coin)
 }
 
 // unmarshal a redelegation from a store value
