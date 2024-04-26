@@ -135,7 +135,7 @@ import (
 )
 
 const (
-	Name       = "picasso"
+	Name       = "pica"
 	dirName    = "banksy"
 	ForkHeight = 244008
 )
