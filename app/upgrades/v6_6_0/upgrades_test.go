@@ -2,6 +2,7 @@ package v6_6_0_test
 
 import (
 	"encoding/json"
+	ibctransfermiddlewaretypes "github.com/notional-labs/composable/v6/x/ibctransfermiddleware/types"
 	"strings"
 	"testing"
 	"time"
@@ -19,6 +20,8 @@ import (
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	routertypes "github.com/cosmos/ibc-apps/middleware/packet-forward-middleware/v7/packetforward/types"
+	ibctransfemiddlewaretypes "github.com/notional-labs/composable/v6/x/ibctransfermiddleware/types"
+
 	apptesting "github.com/notional-labs/composable/v6/app"
 	"github.com/notional-labs/composable/v6/bech32-migration/utils"
 	"github.com/stretchr/testify/suite"
@@ -60,6 +63,7 @@ func (s *UpgradeTestSuite) TestForMigratingNewPrefix() {
 	prepareForTestingMintModule(s)
 	prepareForTestingTransferMiddlewareModule(s)
 	prepareForTestingPfmMiddlewareModule(s)
+	prepareForTestingIbcTransferMiddlewareModule(s)
 
 	/* == UPGRADE == */
 	upgradeHeight := int64(5)
@@ -75,6 +79,7 @@ func (s *UpgradeTestSuite) TestForMigratingNewPrefix() {
 	checkUpgradeMintModule(s)
 	checkUpgradeTransferMiddlewareModule(s)
 	checkUpgradePfmMiddlewareModule(s)
+	checkUpgradeIbcTransferMiddlewareModule(s)
 }
 
 func prepareForTestingGovModule(s *UpgradeTestSuite) (sdk.AccAddress, govtypes.Proposal) {
@@ -246,6 +251,33 @@ func prepareForTestingPfmMiddlewareModule(s *UpgradeTestSuite) {
 	inFlightPacket.OriginalSenderAddress = "centauri1hj5fveer5cjtn4wd6wstzugjfdxzl0xpzxlwgs"
 	bz = encCdc.Amino.MustMarshal(&inFlightPacket)
 	store.Set(key, bz)
+}
+
+func prepareForTestingIbcTransferMiddlewareModule(s *UpgradeTestSuite) {
+	store := s.Ctx.KVStore(s.App.GetKey(ibctransfermiddlewaretypes.StoreKey))
+	var fees []*ibctransfemiddlewaretypes.ChannelFee
+	fees = append(fees, &ibctransfemiddlewaretypes.ChannelFee{
+		Channel: "channel-7",
+		AllowedTokens: []*ibctransfemiddlewaretypes.CoinItem{{
+			MinFee:     sdk.Coin{},
+			Percentage: 20,
+		}},
+		FeeAddress:          "centauri1hj5fveer5cjtn4wd6wstzugjfdxzl0xpzxlwgs",
+		MinTimeoutTimestamp: 0,
+	})
+	fees = append(fees, &ibctransfemiddlewaretypes.ChannelFee{
+		Channel: "channel-9",
+		AllowedTokens: []*ibctransfemiddlewaretypes.CoinItem{{
+			MinFee:     sdk.Coin{},
+			Percentage: 10,
+		}},
+		FeeAddress:          "centauri1hj5fveer5cjtn4wd6wstzugjfdxzl0xpzxlwgs",
+		MinTimeoutTimestamp: 0,
+	})
+	params := ibctransfemiddlewaretypes.Params{ChannelFees: fees}
+	encCdc := apptesting.MakeEncodingConfig()
+	bz := encCdc.Amino.MustMarshal(&params)
+	store.Set(ibctransfemiddlewaretypes.ParamsKey, bz)
 }
 
 func checkUpgradeGovModule(s *UpgradeTestSuite, acc1 sdk.AccAddress, proposal govtypes.Proposal) {
@@ -449,6 +481,17 @@ func checkUpgradePfmMiddlewareModule(s *UpgradeTestSuite) {
 
 	data = s.App.RouterKeeper.GetAndClearInFlightPacket(s.Ctx, "channel-9", "transfer", 2)
 	s.Suite.Equal("pica1hj5fveer5cjtn4wd6wstzugjfdxzl0xpas3hgy", data.OriginalSenderAddress)
+}
+
+func checkUpgradeIbcTransferMiddlewareModule(s *UpgradeTestSuite) {
+	data := s.App.IbcTransferMiddlewareKeeper.GetChannelFeeAddress(s.Ctx, "channel-9")
+	s.Suite.Equal("pica1hj5fveer5cjtn4wd6wstzugjfdxzl0xpas3hgy", data)
+
+	data = s.App.IbcTransferMiddlewareKeeper.GetChannelFeeAddress(s.Ctx, "channel-7")
+	s.Suite.Equal("pica1hj5fveer5cjtn4wd6wstzugjfdxzl0xpas3hgy", data)
+	data = s.App.IbcTransferMiddlewareKeeper.GetChannelFeeAddress(s.Ctx, "channel-1")
+	s.Suite.Equal("", data)
+
 }
 
 func CreateVestingAccount(s *UpgradeTestSuite,

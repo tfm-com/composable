@@ -13,11 +13,13 @@ import (
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 	routertypes "github.com/cosmos/ibc-apps/middleware/packet-forward-middleware/v7/packetforward/types"
 	icahosttypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/host/types"
+	ibctransfermiddlewaretypes "github.com/notional-labs/composable/v6/x/ibctransfermiddleware/types"
 
 	"github.com/notional-labs/composable/v6/app/keepers"
 	"github.com/notional-labs/composable/v6/app/upgrades"
 	bech32authmigration "github.com/notional-labs/composable/v6/bech32-migration/auth"
 	bech32govmigration "github.com/notional-labs/composable/v6/bech32-migration/gov"
+	bench32ibctransfermiddleware "github.com/notional-labs/composable/v6/bech32-migration/ibctransfermiddleware"
 	bech32icamigration "github.com/notional-labs/composable/v6/bech32-migration/ica"
 	bech32mintmigration "github.com/notional-labs/composable/v6/bech32-migration/mint"
 	bech32PfmMigration "github.com/notional-labs/composable/v6/bech32-migration/pfmmiddleware"
@@ -49,6 +51,7 @@ func CreateUpgradeHandler(
 		bech32transfermiddlewaremigration.MigrateAddressBech32(ctx, keys[transfermiddlewaretypes.StoreKey], codec)
 		bech32WasmMigration.MigrateAddressBech32(ctx, keys[wasm.StoreKey], codec)
 		bech32PfmMigration.MigrateAddressBech32(ctx, keys[routertypes.StoreKey], codec, keepers)
+		bench32ibctransfermiddleware.MigrateAddressBech32(ctx, keys[ibctransfermiddlewaretypes.StoreKey], codec)
 		return mm.RunMigrations(ctx, configurator, vm)
 	}
 }
