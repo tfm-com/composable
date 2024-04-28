@@ -58,8 +58,9 @@ func NewKeeper(
 // If the transfer amount is greater than the minimum fee, it will charge the minimum fee and the percentage fee.
 func (k Keeper) Transfer(goCtx context.Context, msg *types.MsgTransfer) (*types.MsgTransferResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
+	charge_coin := msg.Token
+	extra_charge := false
 	params := k.IbcTransfermiddleware.GetParams(ctx)
-	charge_coin := sdk.NewCoin("", sdk.ZeroInt())
 	if params.ChannelFees != nil && len(params.ChannelFees) > 0 {
 		channelFee := findChannelParams(params.ChannelFees, msg.SourceChannel)
 		if channelFee != nil {
@@ -125,16 +126,18 @@ func (k Keeper) Transfer(goCtx context.Context, msg *types.MsgTransfer) (*types.
 				return &types.MsgTransferResponse{}, nil
 			}
 			msg.Token.Amount = newAmount
+			extra_charge = true
 		}
 	}
 	ret, err := k.Keeper.Transfer(goCtx, msg)
-	if err == nil && ret != nil && !charge_coin.IsZero() {
+	if err == nil && ret != nil && extra_charge {
 		k.IbcTransfermiddleware.SetSequenceFee(ctx, ret.Sequence, charge_coin)
 	}
 	return ret, err
 }
 
 func GetPriority(jsonString string) *string {
+	return nil
 	var data map[string]interface{}
 	if err := json.Unmarshal([]byte(jsonString), &data); err != nil {
 		return nil
