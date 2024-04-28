@@ -31,11 +31,9 @@ func NewMsgServerImpl(ibcKeeper Keeper, bankKeeper custombankkeeper.Keeper) type
 // If the transfer amount is less than the minimum fee, it will charge the full transfer amount.
 // If the transfer amount is greater than the minimum fee, it will charge the minimum fee and the percentage fee.
 func (k msgServer) Transfer(goCtx context.Context, msg *types.MsgTransfer) (*types.MsgTransferResponse, error) {
-	// return k.msgServer.Transfer(goCtx, msg)
 	ctx := sdk.UnwrapSDKContext(goCtx)
-	charge_coin := msg.Token
-	extra_charge := false
 	params := k.Keeper.IbcTransfermiddleware.GetParams(ctx)
+	charge_coin := sdk.NewCoin("", sdk.ZeroInt())
 	if params.ChannelFees != nil && len(params.ChannelFees) > 0 {
 		channelFee := findChannelParams(params.ChannelFees, msg.SourceChannel)
 		if channelFee != nil {
@@ -101,11 +99,10 @@ func (k msgServer) Transfer(goCtx context.Context, msg *types.MsgTransfer) (*typ
 				return &types.MsgTransferResponse{}, nil
 			}
 			msg.Token.Amount = newAmount
-			extra_charge = true
 		}
 	}
 	ret, err := k.msgServer.Transfer(goCtx, msg)
-	if err == nil && ret != nil && extra_charge {
+	if err == nil && ret != nil && !charge_coin.IsZero() {
 		k.IbcTransfermiddleware.SetSequenceFee(ctx, ret.Sequence, charge_coin)
 	}
 	return ret, err
