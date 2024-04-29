@@ -19,16 +19,6 @@ func CreateUpgradeHandler(
 	keepers *keepers.AppKeepers,
 ) upgradetypes.UpgradeHandler {
 	return func(ctx sdk.Context, plan upgradetypes.Plan, vm module.VersionMap) (module.VersionMap, error) {
-		// BrokenProposals := [3]uint64{2, 6, 11}
-		// // gov module store
-		// store := ctx.KVStore(keepers.GetKVStoreKey()["gov"])
-
-		// for _, proposalID := range BrokenProposals {
-		// 	bz := store.Get(types.ProposalKey(proposalID))
-		// 	if bz != nil {
-		// 		store.Delete(types.ProposalKey(proposalID))
-		// 	}
-		// }
 		return mm.RunMigrations(ctx, configurator, vm)
 	}
 }
