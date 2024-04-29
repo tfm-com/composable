@@ -137,7 +137,6 @@ func (im IBCMiddleware) OnTimeoutPacket(ctx sdk.Context, packet channeltypes.Pac
 		fee_address, err := sdk.AccAddressFromBech32(сhannelFeeAddress)
 		if err != nil {
 			return nil
-			// return errors.Wrapf(err, "failed to decode receiver address: %s", сhannelFeeAddress)
 		}
 
 		refund_err := im.keeper.RefundChannelCosmosFee(ctx, fee_address, sdk.AccAddress(data.Sender), []sdk.Coin{fee})

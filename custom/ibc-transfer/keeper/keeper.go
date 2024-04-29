@@ -59,7 +59,7 @@ func NewKeeper(
 func (k Keeper) Transfer(goCtx context.Context, msg *types.MsgTransfer) (*types.MsgTransferResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
 	params := k.IbcTransfermiddleware.GetParams(ctx)
-	charge_coin := sdk.NewCoin("", sdk.ZeroInt())
+	charge_coin := sdk.NewCoin(msg.Token.Denom, sdk.ZeroInt())
 	if params.ChannelFees != nil && len(params.ChannelFees) > 0 {
 		channelFee := findChannelParams(params.ChannelFees, msg.SourceChannel)
 		if channelFee != nil {
