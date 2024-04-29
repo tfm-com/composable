@@ -76,6 +76,7 @@ func (k Keeper) GetSequenceFee(ctx sdk.Context, sequence uint64) (coin sdk.Coin,
 	fee := types.MustUnmarshalCoin(k.cdc, value)
 	return fee, true
 }
+
 func (k Keeper) SetSequenceFee(ctx sdk.Context, sequence uint64, coin sdk.Coin) {
 	store := ctx.KVStore(k.storeKey)
 	store.Set(types.GetSequenceKey(sequence), types.MustMarshalCoin(k.cdc, &coin))
