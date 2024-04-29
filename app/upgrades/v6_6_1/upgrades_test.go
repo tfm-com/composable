@@ -2,11 +2,12 @@ package v6_6_1_test
 
 import (
 	"encoding/json"
-	ibchookskeeper "github.com/notional-labs/composable/v6/x/ibc-hooks/keeper"
-	ibctransfermiddlewaretypes "github.com/notional-labs/composable/v6/x/ibctransfermiddleware/types"
 	"strings"
 	"testing"
 	"time"
+
+	ibchookskeeper "github.com/notional-labs/composable/v6/x/ibc-hooks/keeper"
+	ibctransfermiddlewaretypes "github.com/notional-labs/composable/v6/x/ibctransfermiddleware/types"
 
 	"github.com/notional-labs/composable/v6/app/upgrades/v6_6_1"
 
@@ -22,7 +23,6 @@ import (
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	routertypes "github.com/cosmos/ibc-apps/middleware/packet-forward-middleware/v7/packetforward/types"
 	ibchookstypes "github.com/notional-labs/composable/v6/x/ibc-hooks/types"
-	ibctransfemiddlewaretypes "github.com/notional-labs/composable/v6/x/ibctransfermiddleware/types"
 
 	apptesting "github.com/notional-labs/composable/v6/app"
 	"github.com/notional-labs/composable/v6/bech32-migration/utils"
@@ -259,29 +259,29 @@ func prepareForTestingPfmMiddlewareModule(s *UpgradeTestSuite) {
 
 func prepareForTestingIbcTransferMiddlewareModule(s *UpgradeTestSuite) {
 	store := s.Ctx.KVStore(s.App.GetKey(ibctransfermiddlewaretypes.StoreKey))
-	var fees []*ibctransfemiddlewaretypes.ChannelFee
-	fees = append(fees, &ibctransfemiddlewaretypes.ChannelFee{
+	var fees []*ibctransfermiddlewaretypes.ChannelFee
+	fees = append(fees, &ibctransfermiddlewaretypes.ChannelFee{
 		Channel: "channel-7",
-		AllowedTokens: []*ibctransfemiddlewaretypes.CoinItem{{
+		AllowedTokens: []*ibctransfermiddlewaretypes.CoinItem{{
 			MinFee:     sdk.Coin{},
 			Percentage: 20,
 		}},
 		FeeAddress:          "centauri1hj5fveer5cjtn4wd6wstzugjfdxzl0xpzxlwgs",
 		MinTimeoutTimestamp: 0,
 	})
-	fees = append(fees, &ibctransfemiddlewaretypes.ChannelFee{
+	fees = append(fees, &ibctransfermiddlewaretypes.ChannelFee{
 		Channel: "channel-9",
-		AllowedTokens: []*ibctransfemiddlewaretypes.CoinItem{{
+		AllowedTokens: []*ibctransfermiddlewaretypes.CoinItem{{
 			MinFee:     sdk.Coin{},
 			Percentage: 10,
 		}},
 		FeeAddress:          "centauri1hj5fveer5cjtn4wd6wstzugjfdxzl0xpzxlwgs",
 		MinTimeoutTimestamp: 0,
 	})
-	params := ibctransfemiddlewaretypes.Params{ChannelFees: fees}
+	params := ibctransfermiddlewaretypes.Params{ChannelFees: fees}
 	encCdc := apptesting.MakeEncodingConfig()
 	bz := encCdc.Amino.MustMarshal(&params)
-	store.Set(ibctransfemiddlewaretypes.ParamsKey, bz)
+	store.Set(ibctransfermiddlewaretypes.ParamsKey, bz)
 }
 
 func prepareForTestingIbcHooksModule(s *UpgradeTestSuite) {
