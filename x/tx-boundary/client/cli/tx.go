@@ -3,10 +3,10 @@ package cli
 import (
 	"strconv"
 
+	"github.com/0xTFM/composable-cosmos/x/tx-boundary/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/client/tx"
-	"github.com/notional-labs/composable/v6/x/tx-boundary/types"
 	"github.com/spf13/cobra"
 )
 

@@ -1,17 +1,17 @@
 package v6_6_2
 
 import (
+	ibchookstypes "github.com/0xTFM/composable-cosmos/x/ibc-hooks/types"
+	ibctransfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
-	ibchookstypes "github.com/notional-labs/composable/v6/x/ibc-hooks/types"
-	ibctransfermiddlewaretypes "github.com/notional-labs/composable/v6/x/ibctransfermiddleware/types"
 
-	"github.com/notional-labs/composable/v6/app/keepers"
-	"github.com/notional-labs/composable/v6/app/upgrades"
-	bech32IbcHooksMigration "github.com/notional-labs/composable/v6/bech32-migration/ibchooks"
-	bench32ibctransfermiddleware "github.com/notional-labs/composable/v6/bech32-migration/ibctransfermiddleware"
+	"github.com/0xTFM/composable-cosmos/app/keepers"
+	"github.com/0xTFM/composable-cosmos/app/upgrades"
+	bech32IbcHooksMigration "github.com/0xTFM/composable-cosmos/bech32-migration/ibchooks"
+	bench32ibctransfermiddleware "github.com/0xTFM/composable-cosmos/bech32-migration/ibctransfermiddleware"
 )
 
 func CreateUpgradeHandler(

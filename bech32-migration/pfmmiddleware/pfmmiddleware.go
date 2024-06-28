@@ -3,13 +3,13 @@ package pfmmiddleware
 import (
 	"encoding/json"
 
+	"github.com/0xTFM/composable-cosmos/app/keepers"
+	"github.com/0xTFM/composable-cosmos/bech32-migration/utils"
 	"github.com/cosmos/cosmos-sdk/codec"
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	routertypes "github.com/cosmos/ibc-apps/middleware/packet-forward-middleware/v7/packetforward/types"
 	transfertypes "github.com/cosmos/ibc-go/v7/modules/apps/transfer/types"
-	"github.com/notional-labs/composable/v6/app/keepers"
-	"github.com/notional-labs/composable/v6/bech32-migration/utils"
 )
 
 func MigrateAddressBech32(ctx sdk.Context, storeKey storetypes.StoreKey, cdc codec.BinaryCodec, keepers *keepers.AppKeepers) {

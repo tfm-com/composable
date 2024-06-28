@@ -16,9 +16,9 @@ import (
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/spf13/cobra"
 
-	"github.com/notional-labs/composable/v6/x/ratelimit/client/cli"
-	"github.com/notional-labs/composable/v6/x/ratelimit/keeper"
-	"github.com/notional-labs/composable/v6/x/ratelimit/types"
+	"github.com/0xTFM/composable-cosmos/x/ratelimit/client/cli"
+	"github.com/0xTFM/composable-cosmos/x/ratelimit/keeper"
+	"github.com/0xTFM/composable-cosmos/x/ratelimit/types"
 )
 
 var (

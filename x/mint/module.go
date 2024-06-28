@@ -16,10 +16,10 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/notional-labs/composable/v6/x/mint/client/cli"
-	"github.com/notional-labs/composable/v6/x/mint/keeper"
-	"github.com/notional-labs/composable/v6/x/mint/simulation"
-	"github.com/notional-labs/composable/v6/x/mint/types"
+	"github.com/0xTFM/composable-cosmos/x/mint/client/cli"
+	"github.com/0xTFM/composable-cosmos/x/mint/keeper"
+	"github.com/0xTFM/composable-cosmos/x/mint/simulation"
+	"github.com/0xTFM/composable-cosmos/x/mint/types"
 )
 
 var (

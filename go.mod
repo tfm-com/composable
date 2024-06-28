@@ -1,4 +1,4 @@
-module github.com/notional-labs/composable/v6
+module github.com/0xTFM/composable-cosmos
 
 go 1.20
 

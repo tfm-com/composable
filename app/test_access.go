@@ -16,8 +16,8 @@ import (
 	ibckeeper "github.com/cosmos/ibc-go/v7/modules/core/keeper"
 	wasm08 "github.com/cosmos/ibc-go/v7/modules/light-clients/08-wasm/keeper"
 
-	ratelimitkeeper "github.com/notional-labs/composable/v6/x/ratelimit/keeper"
-	tfmdKeeper "github.com/notional-labs/composable/v6/x/transfermiddleware/keeper"
+	ratelimitkeeper "github.com/0xTFM/composable-cosmos/x/ratelimit/keeper"
+	tfmdKeeper "github.com/0xTFM/composable-cosmos/x/transfermiddleware/keeper"
 )
 
 type TestSupport struct {

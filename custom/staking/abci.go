@@ -11,7 +11,7 @@ import (
 	// "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 	"github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	customstakingkeeper "github.com/notional-labs/composable/v6/custom/staking/keeper"
+	customstakingkeeper "github.com/0xTFM/composable-cosmos/custom/staking/keeper"
 )
 
 // Called every block, update validator set

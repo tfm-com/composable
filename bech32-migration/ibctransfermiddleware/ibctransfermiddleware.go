@@ -1,11 +1,11 @@
 package ibctransfermiddleware
 
 import (
+	"github.com/0xTFM/composable-cosmos/bech32-migration/utils"
+	"github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/notional-labs/composable/v6/bech32-migration/utils"
-	"github.com/notional-labs/composable/v6/x/ibctransfermiddleware/types"
 )
 
 func MigrateAddressBech32(ctx sdk.Context, storeKey storetypes.StoreKey, cdc codec.BinaryCodec) {

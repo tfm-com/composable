@@ -1,8 +1,8 @@
 package cli
 
 import (
+	"github.com/0xTFM/composable-cosmos/x/stakingmiddleware/types"
 	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/notional-labs/composable/v6/x/stakingmiddleware/types"
 	"github.com/spf13/cobra"
 )
 

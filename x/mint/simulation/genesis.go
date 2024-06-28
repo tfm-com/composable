@@ -9,7 +9,7 @@ import (
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	"github.com/notional-labs/composable/v6/x/mint/types"
+	"github.com/0xTFM/composable-cosmos/x/mint/types"
 )
 
 // Simulation parameter constants

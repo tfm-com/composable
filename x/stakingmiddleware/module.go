@@ -16,9 +16,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/notional-labs/composable/v6/x/stakingmiddleware/client/cli"
-	"github.com/notional-labs/composable/v6/x/stakingmiddleware/keeper"
-	"github.com/notional-labs/composable/v6/x/stakingmiddleware/types"
+	"github.com/0xTFM/composable-cosmos/x/stakingmiddleware/client/cli"
+	"github.com/0xTFM/composable-cosmos/x/stakingmiddleware/keeper"
+	"github.com/0xTFM/composable-cosmos/x/stakingmiddleware/types"
 )
 
 var (

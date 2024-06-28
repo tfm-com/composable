@@ -3,7 +3,7 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/notional-labs/composable/v6/x/mint/types"
+	"github.com/0xTFM/composable-cosmos/x/mint/types"
 )
 
 // InitGenesis new mint genesis

@@ -11,6 +11,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/snapshots"
 	"github.com/cosmos/cosmos-sdk/snapshots/types"
 
+	"github.com/0xTFM/composable-cosmos/bech32-migration/utils"
+	typesconfig "github.com/0xTFM/composable-cosmos/cmd/picad/config"
+	minttypes "github.com/0xTFM/composable-cosmos/x/mint/types"
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
 	dbm "github.com/cometbft/cometbft-db"
 	abci "github.com/cometbft/cometbft/abci/types"
@@ -34,9 +37,6 @@ import (
 	stakinghelper "github.com/cosmos/cosmos-sdk/x/staking/testutil"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
-	"github.com/notional-labs/composable/v6/bech32-migration/utils"
-	typesconfig "github.com/notional-labs/composable/v6/cmd/picad/config"
-	minttypes "github.com/notional-labs/composable/v6/x/mint/types"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 )

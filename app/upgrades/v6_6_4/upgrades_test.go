@@ -6,12 +6,13 @@ import (
 	"testing"
 	"time"
 
-	ibchookskeeper "github.com/notional-labs/composable/v6/x/ibc-hooks/keeper"
-	ibctransfermiddlewaretypes "github.com/notional-labs/composable/v6/x/ibctransfermiddleware/types"
+	ibchookskeeper "github.com/0xTFM/composable-cosmos/x/ibc-hooks/keeper"
+	ibctransfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
 
-	"github.com/notional-labs/composable/v6/app/upgrades/v6_6_4"
+	"github.com/0xTFM/composable-cosmos/app/upgrades/v6_6_4"
 
 	"cosmossdk.io/math"
+	ibchookstypes "github.com/0xTFM/composable-cosmos/x/ibc-hooks/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/bech32"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
@@ -22,10 +23,9 @@ import (
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	routertypes "github.com/cosmos/ibc-apps/middleware/packet-forward-middleware/v7/packetforward/types"
-	ibchookstypes "github.com/notional-labs/composable/v6/x/ibc-hooks/types"
 
-	apptesting "github.com/notional-labs/composable/v6/app"
-	"github.com/notional-labs/composable/v6/bech32-migration/utils"
+	apptesting "github.com/0xTFM/composable-cosmos/app"
+	"github.com/0xTFM/composable-cosmos/bech32-migration/utils"
 	"github.com/stretchr/testify/suite"
 	alliancetypes "github.com/terra-money/alliance/x/alliance/types"
 )

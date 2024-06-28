@@ -11,7 +11,7 @@ import (
 	porttypes "github.com/cosmos/ibc-go/v7/modules/core/05-port/types"
 	ibcexported "github.com/cosmos/ibc-go/v7/modules/core/exported"
 
-	"github.com/notional-labs/composable/v6/x/transfermiddleware/keeper"
+	"github.com/0xTFM/composable-cosmos/x/transfermiddleware/keeper"
 )
 
 var _ porttypes.Middleware = &IBCMiddleware{}

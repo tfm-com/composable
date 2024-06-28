@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/notional-labs/composable/v6/app/upgrades/v6_6_4"
+	"github.com/0xTFM/composable-cosmos/app/upgrades/v6_6_4"
 
 	nodeservice "github.com/cosmos/cosmos-sdk/client/grpc/node"
 	authante "github.com/cosmos/cosmos-sdk/x/auth/ante"
@@ -37,7 +37,7 @@ import (
 	vestingtypes "github.com/cosmos/cosmos-sdk/x/auth/vesting/types"
 	"github.com/cosmos/cosmos-sdk/x/bank"
 
-	"github.com/notional-labs/composable/v6/app/keepers"
+	"github.com/0xTFM/composable-cosmos/app/keepers"
 
 	// bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 
@@ -75,6 +75,8 @@ import (
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	"github.com/cosmos/cosmos-sdk/x/staking"
 
+	customibctransfer "github.com/0xTFM/composable-cosmos/custom/ibc-transfer"
+	customstaking "github.com/0xTFM/composable-cosmos/custom/staking"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	"github.com/cosmos/cosmos-sdk/x/upgrade"
 	upgradeclient "github.com/cosmos/cosmos-sdk/x/upgrade/client"
@@ -88,8 +90,6 @@ import (
 	ibcclientclient "github.com/cosmos/ibc-go/v7/modules/core/02-client/client"
 	ibchost "github.com/cosmos/ibc-go/v7/modules/core/exported"
 	ibckeeper "github.com/cosmos/ibc-go/v7/modules/core/keeper"
-	customibctransfer "github.com/notional-labs/composable/v6/custom/ibc-transfer"
-	customstaking "github.com/notional-labs/composable/v6/custom/staking"
 	"github.com/spf13/cast"
 	icq "github.com/strangelove-ventures/async-icq/v7"
 	icqtypes "github.com/strangelove-ventures/async-icq/v7/types"
@@ -100,37 +100,37 @@ import (
 	alliancemoduleclient "github.com/terra-money/alliance/x/alliance/client"
 	alliancemoduletypes "github.com/terra-money/alliance/x/alliance/types"
 
-	custombankmodule "github.com/notional-labs/composable/v6/custom/bank"
+	custombankmodule "github.com/0xTFM/composable-cosmos/custom/bank"
 
-	"github.com/notional-labs/composable/v6/app/ante"
-	"github.com/notional-labs/composable/v6/x/ibctransfermiddleware"
-	"github.com/notional-labs/composable/v6/x/stakingmiddleware"
-	transfermiddleware "github.com/notional-labs/composable/v6/x/transfermiddleware"
-	transfermiddlewaretypes "github.com/notional-labs/composable/v6/x/transfermiddleware/types"
+	"github.com/0xTFM/composable-cosmos/app/ante"
+	"github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware"
+	"github.com/0xTFM/composable-cosmos/x/stakingmiddleware"
+	transfermiddleware "github.com/0xTFM/composable-cosmos/x/transfermiddleware"
+	transfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/transfermiddleware/types"
 
-	txBoundary "github.com/notional-labs/composable/v6/x/tx-boundary"
-	txBoundaryTypes "github.com/notional-labs/composable/v6/x/tx-boundary/types"
+	txBoundary "github.com/0xTFM/composable-cosmos/x/tx-boundary"
+	txBoundaryTypes "github.com/0xTFM/composable-cosmos/x/tx-boundary/types"
 
-	ratelimitmodule "github.com/notional-labs/composable/v6/x/ratelimit"
-	ratelimitmoduletypes "github.com/notional-labs/composable/v6/x/ratelimit/types"
+	ratelimitmodule "github.com/0xTFM/composable-cosmos/x/ratelimit"
+	ratelimitmoduletypes "github.com/0xTFM/composable-cosmos/x/ratelimit/types"
 
 	consensusparamtypes "github.com/cosmos/cosmos-sdk/x/consensus/types"
 
-	"github.com/notional-labs/composable/v6/x/mint"
-	minttypes "github.com/notional-labs/composable/v6/x/mint/types"
+	"github.com/0xTFM/composable-cosmos/x/mint"
+	minttypes "github.com/0xTFM/composable-cosmos/x/mint/types"
 
 	ibctestingtypes "github.com/cosmos/ibc-go/v7/testing/types"
 
-	ibc_hooks "github.com/notional-labs/composable/v6/x/ibc-hooks"
-	ibchookstypes "github.com/notional-labs/composable/v6/x/ibc-hooks/types"
+	ibc_hooks "github.com/0xTFM/composable-cosmos/x/ibc-hooks"
+	ibchookstypes "github.com/0xTFM/composable-cosmos/x/ibc-hooks/types"
 
 	"github.com/CosmWasm/wasmd/x/wasm"
 	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
 
-	upgrades "github.com/notional-labs/composable/v6/app/upgrades"
-	ibctransfermiddlewaretypes "github.com/notional-labs/composable/v6/x/ibctransfermiddleware/types"
-	stakingmiddlewaretypes "github.com/notional-labs/composable/v6/x/stakingmiddleware/types"
+	upgrades "github.com/0xTFM/composable-cosmos/app/upgrades"
+	ibctransfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
+	stakingmiddlewaretypes "github.com/0xTFM/composable-cosmos/x/stakingmiddleware/types"
 )
 
 const (

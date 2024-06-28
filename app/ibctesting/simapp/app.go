@@ -90,9 +90,9 @@ import (
 	"github.com/gorilla/mux"
 
 	// TODO: mint module not complete yet,
-	"github.com/notional-labs/composable/v6/x/mint"
-	mintkeeper "github.com/notional-labs/composable/v6/x/mint/keeper"
-	minttypes "github.com/notional-labs/composable/v6/x/mint/types"
+	"github.com/0xTFM/composable-cosmos/x/mint"
+	mintkeeper "github.com/0xTFM/composable-cosmos/x/mint/keeper"
+	minttypes "github.com/0xTFM/composable-cosmos/x/mint/types"
 
 	"github.com/rakyll/statik/fs"
 	"github.com/spf13/cast"
@@ -124,15 +124,15 @@ import (
 	ibcmock "github.com/cosmos/ibc-go/v7/testing/mock"
 	ibctestingtypes "github.com/cosmos/ibc-go/v7/testing/types"
 
-	simappparams "github.com/notional-labs/composable/v6/app/ibctesting/simapp/params"
-	simappupgrades "github.com/notional-labs/composable/v6/app/ibctesting/simapp/upgrades"
-	v6 "github.com/notional-labs/composable/v6/app/ibctesting/simapp/upgrades/v6"
-	v7 "github.com/notional-labs/composable/v6/app/ibctesting/simapp/upgrades/v7"
-	ibctransfermiddleware "github.com/notional-labs/composable/v6/x/ibctransfermiddleware/keeper"
-	ibctransfermiddlewaretypes "github.com/notional-labs/composable/v6/x/ibctransfermiddleware/types"
-	transfermiddleware "github.com/notional-labs/composable/v6/x/transfermiddleware"
-	transfermiddlewarekeeper "github.com/notional-labs/composable/v6/x/transfermiddleware/keeper"
-	transfermiddlewaretypes "github.com/notional-labs/composable/v6/x/transfermiddleware/types"
+	simappparams "github.com/0xTFM/composable-cosmos/app/ibctesting/simapp/params"
+	simappupgrades "github.com/0xTFM/composable-cosmos/app/ibctesting/simapp/upgrades"
+	v6 "github.com/0xTFM/composable-cosmos/app/ibctesting/simapp/upgrades/v6"
+	v7 "github.com/0xTFM/composable-cosmos/app/ibctesting/simapp/upgrades/v7"
+	ibctransfermiddleware "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/keeper"
+	ibctransfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
+	transfermiddleware "github.com/0xTFM/composable-cosmos/x/transfermiddleware"
+	transfermiddlewarekeeper "github.com/0xTFM/composable-cosmos/x/transfermiddleware/keeper"
+	transfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/transfermiddleware/types"
 )
 
 const appName = "SimApp"

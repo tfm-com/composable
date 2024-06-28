@@ -1,6 +1,8 @@
 package v6_6_1
 
 import (
+	ibchookstypes "github.com/0xTFM/composable-cosmos/x/ibc-hooks/types"
+	ibctransfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
 	"github.com/CosmWasm/wasmd/x/wasm"
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -13,23 +15,21 @@ import (
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 	routertypes "github.com/cosmos/ibc-apps/middleware/packet-forward-middleware/v7/packetforward/types"
 	icahosttypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/host/types"
-	ibchookstypes "github.com/notional-labs/composable/v6/x/ibc-hooks/types"
-	ibctransfermiddlewaretypes "github.com/notional-labs/composable/v6/x/ibctransfermiddleware/types"
 
-	"github.com/notional-labs/composable/v6/app/keepers"
-	"github.com/notional-labs/composable/v6/app/upgrades"
-	bech32authmigration "github.com/notional-labs/composable/v6/bech32-migration/auth"
-	bech32govmigration "github.com/notional-labs/composable/v6/bech32-migration/gov"
-	bech32IbcHooksMigration "github.com/notional-labs/composable/v6/bech32-migration/ibchooks"
-	bench32ibctransfermiddleware "github.com/notional-labs/composable/v6/bech32-migration/ibctransfermiddleware"
-	bech32icamigration "github.com/notional-labs/composable/v6/bech32-migration/ica"
-	bech32mintmigration "github.com/notional-labs/composable/v6/bech32-migration/mint"
-	bech32PfmMigration "github.com/notional-labs/composable/v6/bech32-migration/pfmmiddleware"
-	bech32slashingmigration "github.com/notional-labs/composable/v6/bech32-migration/slashing"
-	bech32stakingmigration "github.com/notional-labs/composable/v6/bech32-migration/staking"
-	bech32transfermiddlewaremigration "github.com/notional-labs/composable/v6/bech32-migration/transfermiddleware"
-	bech32WasmMigration "github.com/notional-labs/composable/v6/bech32-migration/wasm"
-	transfermiddlewaretypes "github.com/notional-labs/composable/v6/x/transfermiddleware/types"
+	"github.com/0xTFM/composable-cosmos/app/keepers"
+	"github.com/0xTFM/composable-cosmos/app/upgrades"
+	bech32authmigration "github.com/0xTFM/composable-cosmos/bech32-migration/auth"
+	bech32govmigration "github.com/0xTFM/composable-cosmos/bech32-migration/gov"
+	bech32IbcHooksMigration "github.com/0xTFM/composable-cosmos/bech32-migration/ibchooks"
+	bench32ibctransfermiddleware "github.com/0xTFM/composable-cosmos/bech32-migration/ibctransfermiddleware"
+	bech32icamigration "github.com/0xTFM/composable-cosmos/bech32-migration/ica"
+	bech32mintmigration "github.com/0xTFM/composable-cosmos/bech32-migration/mint"
+	bech32PfmMigration "github.com/0xTFM/composable-cosmos/bech32-migration/pfmmiddleware"
+	bech32slashingmigration "github.com/0xTFM/composable-cosmos/bech32-migration/slashing"
+	bech32stakingmigration "github.com/0xTFM/composable-cosmos/bech32-migration/staking"
+	bech32transfermiddlewaremigration "github.com/0xTFM/composable-cosmos/bech32-migration/transfermiddleware"
+	bech32WasmMigration "github.com/0xTFM/composable-cosmos/bech32-migration/wasm"
+	transfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/transfermiddleware/types"
 )
 
 func CreateUpgradeHandler(
