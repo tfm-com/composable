@@ -1,9 +1,9 @@
 package cli
 
 import (
-	"github.com/0xTFM/composable-cosmos/x/stakingmiddleware/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/spf13/cobra"
+	"github.com/tfm-com/composable/x/stakingmiddleware/types"
 )
 
 // GetTxCmd returns the tx commands for staking middleware module.

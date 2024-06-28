@@ -16,9 +16,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/0xTFM/composable-cosmos/x/stakingmiddleware/client/cli"
-	"github.com/0xTFM/composable-cosmos/x/stakingmiddleware/keeper"
-	"github.com/0xTFM/composable-cosmos/x/stakingmiddleware/types"
+	"github.com/tfm-com/composable/x/stakingmiddleware/client/cli"
+	"github.com/tfm-com/composable/x/stakingmiddleware/keeper"
+	"github.com/tfm-com/composable/x/stakingmiddleware/types"
 )
 
 var (

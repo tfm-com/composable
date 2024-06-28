@@ -8,9 +8,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/0xTFM/composable-cosmos/app"
-	"github.com/0xTFM/composable-cosmos/app/helpers"
-	"github.com/0xTFM/composable-cosmos/x/tx-boundary/types"
+	"github.com/tfm-com/composable/app"
+	"github.com/tfm-com/composable/app/helpers"
+	"github.com/tfm-com/composable/x/tx-boundary/types"
 )
 
 type KeeperTestSuite struct {

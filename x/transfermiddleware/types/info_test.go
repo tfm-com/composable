@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/0xTFM/composable-cosmos/x/transfermiddleware/types"
+	"github.com/tfm-com/composable/x/transfermiddleware/types"
 )
 
 func TestValidateBasic(t *testing.T) {

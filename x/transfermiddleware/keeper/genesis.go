@@ -3,7 +3,7 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/0xTFM/composable-cosmos/x/transfermiddleware/types"
+	"github.com/tfm-com/composable/x/transfermiddleware/types"
 )
 
 // TODO: add init genesis logic

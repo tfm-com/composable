@@ -9,7 +9,7 @@ import (
 	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
 	"github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
 
-	"github.com/0xTFM/composable-cosmos/bech32-migration/utils"
+	"github.com/tfm-com/composable/bech32-migration/utils"
 )
 
 func MigrateAddressBech32(ctx sdk.Context, storeKey storetypes.StoreKey, cdc codec.BinaryCodec) {

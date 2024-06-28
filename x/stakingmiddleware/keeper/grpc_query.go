@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/0xTFM/composable-cosmos/x/stakingmiddleware/types"
+	"github.com/tfm-com/composable/x/stakingmiddleware/types"
 )
 
 var _ types.QueryServer = Keeper{}

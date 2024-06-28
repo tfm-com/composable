@@ -16,9 +16,9 @@ import (
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/spf13/cobra"
 
-	"github.com/0xTFM/composable-cosmos/x/ratelimit/client/cli"
-	"github.com/0xTFM/composable-cosmos/x/ratelimit/keeper"
-	"github.com/0xTFM/composable-cosmos/x/ratelimit/types"
+	"github.com/tfm-com/composable/x/ratelimit/client/cli"
+	"github.com/tfm-com/composable/x/ratelimit/keeper"
+	"github.com/tfm-com/composable/x/ratelimit/types"
 )
 
 var (

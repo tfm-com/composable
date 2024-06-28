@@ -3,7 +3,7 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/0xTFM/composable-cosmos/x/tx-boundary/types"
+	"github.com/tfm-com/composable/x/tx-boundary/types"
 )
 
 // InitGenesis initializes the capability module's state from a provided genesis

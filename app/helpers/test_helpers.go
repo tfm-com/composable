@@ -27,7 +27,7 @@ import (
 	"github.com/cosmos/ibc-go/v7/testing/mock"
 	"github.com/stretchr/testify/require"
 
-	composable "github.com/0xTFM/composable-cosmos/app"
+	composable "github.com/tfm-com/composable/app"
 )
 
 // SimAppChainID hardcoded chainID for simulation

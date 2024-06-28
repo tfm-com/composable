@@ -5,10 +5,10 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 
-	"github.com/0xTFM/composable-cosmos/app/keepers"
-	"github.com/0xTFM/composable-cosmos/app/upgrades"
-	ibctransfermiddleware "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
 	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/tfm-com/composable/app/keepers"
+	"github.com/tfm-com/composable/app/upgrades"
+	ibctransfermiddleware "github.com/tfm-com/composable/x/ibctransfermiddleware/types"
 )
 
 func CreateUpgradeHandler(

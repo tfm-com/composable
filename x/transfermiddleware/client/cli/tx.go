@@ -9,7 +9,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/version"
 	"github.com/spf13/cobra"
 
-	"github.com/0xTFM/composable-cosmos/x/transfermiddleware/types"
+	"github.com/tfm-com/composable/x/transfermiddleware/types"
 )
 
 // GetTxCmd returns the tx commands for router

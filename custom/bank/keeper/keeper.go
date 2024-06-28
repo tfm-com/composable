@@ -13,9 +13,9 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	banktypes "github.com/0xTFM/composable-cosmos/custom/bank/types"
+	banktypes "github.com/tfm-com/composable/custom/bank/types"
 
-	transfermiddlewarekeeper "github.com/0xTFM/composable-cosmos/x/transfermiddleware/keeper"
+	transfermiddlewarekeeper "github.com/tfm-com/composable/x/transfermiddleware/keeper"
 
 	alliancekeeper "github.com/terra-money/alliance/x/alliance/keeper"
 )

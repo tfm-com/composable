@@ -3,7 +3,7 @@ package ratelimit
 import (
 	"fmt"
 
-	"github.com/0xTFM/composable-cosmos/x/ratelimit/keeper"
+	"github.com/tfm-com/composable/x/ratelimit/keeper"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 

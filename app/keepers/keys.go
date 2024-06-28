@@ -29,24 +29,24 @@ import (
 	routertypes "github.com/cosmos/ibc-apps/middleware/packet-forward-middleware/v7/packetforward/types"
 	alliancemoduletypes "github.com/terra-money/alliance/x/alliance/types"
 
-	ibchookstypes "github.com/0xTFM/composable-cosmos/x/ibc-hooks/types"
-	ratelimitmoduletypes "github.com/0xTFM/composable-cosmos/x/ratelimit/types"
-	transfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/transfermiddleware/types"
-	txBoundaryTypes "github.com/0xTFM/composable-cosmos/x/tx-boundary/types"
+	ibchookstypes "github.com/tfm-com/composable/x/ibc-hooks/types"
+	ratelimitmoduletypes "github.com/tfm-com/composable/x/ratelimit/types"
+	transfermiddlewaretypes "github.com/tfm-com/composable/x/transfermiddleware/types"
+	txBoundaryTypes "github.com/tfm-com/composable/x/tx-boundary/types"
 
 	consensusparamtypes "github.com/cosmos/cosmos-sdk/x/consensus/types"
 
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 
-	minttypes "github.com/0xTFM/composable-cosmos/x/mint/types"
+	minttypes "github.com/tfm-com/composable/x/mint/types"
 
 	"github.com/CosmWasm/wasmd/x/wasm"
 	wasm08types "github.com/cosmos/ibc-go/v7/modules/light-clients/08-wasm/types"
 
-	// customstakingtypes "github.com/0xTFM/composable-cosmos/custom/staking/types"
-	stakingmiddleware "github.com/0xTFM/composable-cosmos/x/stakingmiddleware/types"
+	// customstakingtypes "github.com/tfm-com/composable/custom/staking/types"
+	stakingmiddleware "github.com/tfm-com/composable/x/stakingmiddleware/types"
 
-	ibctransfermiddleware "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
+	ibctransfermiddleware "github.com/tfm-com/composable/x/ibctransfermiddleware/types"
 )
 
 // GenerateKeys generates new keys (KV Store, Transient store, and memory store).

@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	helpers "github.com/0xTFM/composable-cosmos/app/helpers"
-	"github.com/0xTFM/composable-cosmos/x/transfermiddleware/types"
+	helpers "github.com/tfm-com/composable/app/helpers"
+	"github.com/tfm-com/composable/x/transfermiddleware/types"
 )
 
 func TestTFMInitGenesis(t *testing.T) {

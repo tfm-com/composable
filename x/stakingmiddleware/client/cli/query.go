@@ -3,9 +3,9 @@ package cli
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/0xTFM/composable-cosmos/x/stakingmiddleware/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
+	"github.com/tfm-com/composable/x/stakingmiddleware/types"
 )
 
 // GetQueryCmd returns the cli query commands for the staking middleware module.

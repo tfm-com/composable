@@ -11,9 +11,6 @@ import (
 	"github.com/cosmos/cosmos-sdk/snapshots"
 	"github.com/cosmos/cosmos-sdk/snapshots/types"
 
-	"github.com/0xTFM/composable-cosmos/bech32-migration/utils"
-	typesconfig "github.com/0xTFM/composable-cosmos/cmd/picad/config"
-	minttypes "github.com/0xTFM/composable-cosmos/x/mint/types"
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
 	dbm "github.com/cometbft/cometbft-db"
 	abci "github.com/cometbft/cometbft/abci/types"
@@ -39,6 +36,9 @@ import (
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
+	"github.com/tfm-com/composable/bech32-migration/utils"
+	typesconfig "github.com/tfm-com/composable/cmd/picad/config"
+	minttypes "github.com/tfm-com/composable/x/mint/types"
 )
 
 // DefaultConsensusParams defines the default Tendermint consensus params used in

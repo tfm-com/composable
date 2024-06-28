@@ -4,8 +4,6 @@ import (
 	"time"
 
 	"cosmossdk.io/math"
-	"github.com/0xTFM/composable-cosmos/app"
-	"github.com/0xTFM/composable-cosmos/app/helpers"
 	tmproto "github.com/cometbft/cometbft/proto/tendermint/types"
 	tmtypes "github.com/cometbft/cometbft/types"
 	"github.com/cosmos/cosmos-sdk/client"
@@ -21,6 +19,8 @@ import (
 	"github.com/cosmos/ibc-go/v7/testing/mock"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
+	"github.com/tfm-com/composable/app"
+	"github.com/tfm-com/composable/app/helpers"
 )
 
 var BaseBalance = sdk.NewCoins(sdk.NewCoin(sdk.DefaultBondDenom, sdk.NewInt(10000000000)))

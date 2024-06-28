@@ -1,4 +1,4 @@
-module github.com/0xTFM/composable-cosmos
+module github.com/tfm-com/composable
 
 go 1.20
 

@@ -30,7 +30,7 @@ import (
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	"github.com/stretchr/testify/require"
 
-	minttypes "github.com/0xTFM/composable-cosmos/x/mint/types"
+	minttypes "github.com/tfm-com/composable/x/mint/types"
 
 	ibctransfertypes "github.com/cosmos/ibc-go/v7/modules/apps/transfer/types"
 	ibcexported "github.com/cosmos/ibc-go/v7/modules/core/exported"

@@ -6,10 +6,10 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/gov/types"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 
-	"github.com/0xTFM/composable-cosmos/app/keepers"
 	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/tfm-com/composable/app/keepers"
 
-	"github.com/0xTFM/composable-cosmos/app/upgrades"
+	"github.com/tfm-com/composable/app/upgrades"
 )
 
 func CreateUpgradeHandler(

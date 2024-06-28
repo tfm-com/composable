@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
-	custombankkeeper "github.com/0xTFM/composable-cosmos/custom/bank/keeper"
-	ibctransfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/ibc-go/v7/modules/apps/transfer/types"
+	custombankkeeper "github.com/tfm-com/composable/custom/bank/keeper"
+	ibctransfermiddlewaretypes "github.com/tfm-com/composable/x/ibctransfermiddleware/types"
 )
 
 type msgServer struct {

@@ -5,7 +5,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/0xTFM/composable-cosmos/x/ratelimit/types"
+	"github.com/tfm-com/composable/x/ratelimit/types"
 )
 
 // GetTxCmd returns the tx commands for router

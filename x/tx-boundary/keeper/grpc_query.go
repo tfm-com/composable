@@ -3,8 +3,8 @@ package keeper
 import (
 	"context"
 
-	"github.com/0xTFM/composable-cosmos/x/tx-boundary/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/tfm-com/composable/x/tx-boundary/types"
 )
 
 var _ types.QueryServer = Keeper{}

@@ -10,8 +10,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/kv"
 	"github.com/cosmos/cosmos-sdk/types/module/testutil"
 
-	"github.com/0xTFM/composable-cosmos/x/mint/simulation"
-	composableminttypes "github.com/0xTFM/composable-cosmos/x/mint/types"
+	"github.com/tfm-com/composable/x/mint/simulation"
+	composableminttypes "github.com/tfm-com/composable/x/mint/types"
 )
 
 func TestDecodeStore(t *testing.T) {

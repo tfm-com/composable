@@ -8,7 +8,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/0xTFM/composable-cosmos/bech32-migration/utils"
+	"github.com/tfm-com/composable/bech32-migration/utils"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"

@@ -1,11 +1,11 @@
 package wasm
 
 import (
-	"github.com/0xTFM/composable-cosmos/bech32-migration/utils"
 	"github.com/CosmWasm/wasmd/x/wasm/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/store/prefix"
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
+	"github.com/tfm-com/composable/bech32-migration/utils"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

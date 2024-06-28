@@ -8,7 +8,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/address"
 
-	"github.com/0xTFM/composable-cosmos/x/ibc-hooks/types"
+	"github.com/tfm-com/composable/x/ibc-hooks/types"
 )
 
 type (

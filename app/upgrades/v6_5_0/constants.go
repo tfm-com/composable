@@ -1,9 +1,9 @@
 package v6_5_0
 
 import (
-	"github.com/0xTFM/composable-cosmos/app/upgrades"
-	ibctransfermiddleware "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
 	store "github.com/cosmos/cosmos-sdk/store/types"
+	"github.com/tfm-com/composable/app/upgrades"
+	ibctransfermiddleware "github.com/tfm-com/composable/x/ibctransfermiddleware/types"
 )
 
 const (

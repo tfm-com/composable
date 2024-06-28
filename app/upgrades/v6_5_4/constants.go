@@ -1,8 +1,8 @@
 package v6_5_4
 
 import (
-	"github.com/0xTFM/composable-cosmos/app/upgrades"
 	store "github.com/cosmos/cosmos-sdk/store/types"
+	"github.com/tfm-com/composable/app/upgrades"
 )
 
 const (

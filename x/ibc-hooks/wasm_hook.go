@@ -11,8 +11,8 @@ import (
 	channeltypes "github.com/cosmos/ibc-go/v7/modules/core/04-channel/types"
 	ibcexported "github.com/cosmos/ibc-go/v7/modules/core/exported"
 
-	"github.com/0xTFM/composable-cosmos/x/ibc-hooks/keeper"
-	"github.com/0xTFM/composable-cosmos/x/ibc-hooks/types"
+	"github.com/tfm-com/composable/x/ibc-hooks/keeper"
+	"github.com/tfm-com/composable/x/ibc-hooks/types"
 
 	errorsmod "cosmossdk.io/errors"
 	sdk "github.com/cosmos/cosmos-sdk/types"

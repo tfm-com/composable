@@ -6,7 +6,7 @@ import (
 
 	"github.com/gogo/protobuf/proto"
 
-	"github.com/0xTFM/composable-cosmos/x/ratelimit/types"
+	"github.com/tfm-com/composable/x/ratelimit/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

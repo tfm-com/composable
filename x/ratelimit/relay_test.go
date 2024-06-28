@@ -8,8 +8,8 @@ import (
 	clienttypes "github.com/cosmos/ibc-go/v7/modules/core/02-client/types"
 	"github.com/stretchr/testify/suite"
 
-	customibctesting "github.com/0xTFM/composable-cosmos/app/ibctesting"
-	ratelimittypes "github.com/0xTFM/composable-cosmos/x/ratelimit/types"
+	customibctesting "github.com/tfm-com/composable/app/ibctesting"
+	ratelimittypes "github.com/tfm-com/composable/x/ratelimit/types"
 )
 
 type RateLimitTestSuite struct {

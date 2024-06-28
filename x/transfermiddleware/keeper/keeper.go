@@ -15,8 +15,8 @@ import (
 	porttypes "github.com/cosmos/ibc-go/v7/modules/core/05-port/types"
 	"github.com/cosmos/ibc-go/v7/modules/core/exported"
 
-	ibctransfermiddleware "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/keeper"
-	"github.com/0xTFM/composable-cosmos/x/transfermiddleware/types"
+	ibctransfermiddleware "github.com/tfm-com/composable/x/ibctransfermiddleware/keeper"
+	"github.com/tfm-com/composable/x/transfermiddleware/types"
 )
 
 type Keeper struct {

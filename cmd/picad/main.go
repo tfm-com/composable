@@ -5,9 +5,9 @@ import (
 
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 
-	"github.com/0xTFM/composable-cosmos/app"
-	cmd "github.com/0xTFM/composable-cosmos/cmd/picad/cmd"
-	cmdcfg "github.com/0xTFM/composable-cosmos/cmd/picad/config"
+	"github.com/tfm-com/composable/app"
+	cmd "github.com/tfm-com/composable/cmd/picad/cmd"
+	cmdcfg "github.com/tfm-com/composable/cmd/picad/config"
 )
 
 func main() {

@@ -45,8 +45,8 @@ import (
 	slashingkeeper "github.com/cosmos/cosmos-sdk/x/slashing/keeper"
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 
-	customstaking "github.com/0xTFM/composable-cosmos/custom/staking/keeper"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
+	customstaking "github.com/tfm-com/composable/custom/staking/keeper"
 
 	"github.com/cosmos/cosmos-sdk/x/upgrade"
 	upgradekeeper "github.com/cosmos/cosmos-sdk/x/upgrade/keeper"
@@ -58,7 +58,6 @@ import (
 	icahosttypes "github.com/cosmos/ibc-go/v7/modules/apps/27-interchain-accounts/host/types"
 	"github.com/cosmos/ibc-go/v7/modules/apps/transfer"
 
-	customibctransferkeeper "github.com/0xTFM/composable-cosmos/custom/ibc-transfer/keeper"
 	ibctransfertypes "github.com/cosmos/ibc-go/v7/modules/apps/transfer/types"
 	ibcclient "github.com/cosmos/ibc-go/v7/modules/core/02-client"
 	ibcclienttypes "github.com/cosmos/ibc-go/v7/modules/core/02-client/types"
@@ -67,8 +66,9 @@ import (
 	icq "github.com/strangelove-ventures/async-icq/v7"
 	icqkeeper "github.com/strangelove-ventures/async-icq/v7/keeper"
 	icqtypes "github.com/strangelove-ventures/async-icq/v7/types"
+	customibctransferkeeper "github.com/tfm-com/composable/custom/ibc-transfer/keeper"
 
-	custombankkeeper "github.com/0xTFM/composable-cosmos/custom/bank/keeper"
+	custombankkeeper "github.com/tfm-com/composable/custom/bank/keeper"
 
 	router "github.com/cosmos/ibc-apps/middleware/packet-forward-middleware/v7/packetforward"
 	routerkeeper "github.com/cosmos/ibc-apps/middleware/packet-forward-middleware/v7/packetforward/keeper"
@@ -78,22 +78,22 @@ import (
 	alliancemodulekeeper "github.com/terra-money/alliance/x/alliance/keeper"
 	alliancemoduletypes "github.com/terra-money/alliance/x/alliance/types"
 
-	transfermiddleware "github.com/0xTFM/composable-cosmos/x/transfermiddleware"
-	transfermiddlewarekeeper "github.com/0xTFM/composable-cosmos/x/transfermiddleware/keeper"
-	transfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/transfermiddleware/types"
+	transfermiddleware "github.com/tfm-com/composable/x/transfermiddleware"
+	transfermiddlewarekeeper "github.com/tfm-com/composable/x/transfermiddleware/keeper"
+	transfermiddlewaretypes "github.com/tfm-com/composable/x/transfermiddleware/types"
 
-	txBoundaryKeeper "github.com/0xTFM/composable-cosmos/x/tx-boundary/keeper"
-	txBoundaryTypes "github.com/0xTFM/composable-cosmos/x/tx-boundary/types"
+	txBoundaryKeeper "github.com/tfm-com/composable/x/tx-boundary/keeper"
+	txBoundaryTypes "github.com/tfm-com/composable/x/tx-boundary/types"
 
-	ratelimitmodule "github.com/0xTFM/composable-cosmos/x/ratelimit"
-	ratelimitmodulekeeper "github.com/0xTFM/composable-cosmos/x/ratelimit/keeper"
-	ratelimitmoduletypes "github.com/0xTFM/composable-cosmos/x/ratelimit/types"
+	ratelimitmodule "github.com/tfm-com/composable/x/ratelimit"
+	ratelimitmodulekeeper "github.com/tfm-com/composable/x/ratelimit/keeper"
+	ratelimitmoduletypes "github.com/tfm-com/composable/x/ratelimit/types"
 
 	consensusparamkeeper "github.com/cosmos/cosmos-sdk/x/consensus/keeper"
 	consensusparamtypes "github.com/cosmos/cosmos-sdk/x/consensus/types"
 
-	mintkeeper "github.com/0xTFM/composable-cosmos/x/mint/keeper"
-	minttypes "github.com/0xTFM/composable-cosmos/x/mint/types"
+	mintkeeper "github.com/tfm-com/composable/x/mint/keeper"
+	minttypes "github.com/tfm-com/composable/x/mint/types"
 
 	"github.com/CosmWasm/wasmd/x/wasm"
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
@@ -102,14 +102,14 @@ import (
 	wasm08Keeper "github.com/cosmos/ibc-go/v7/modules/light-clients/08-wasm/keeper"
 	wasm08types "github.com/cosmos/ibc-go/v7/modules/light-clients/08-wasm/types"
 
-	ibc_hooks "github.com/0xTFM/composable-cosmos/x/ibc-hooks"
-	ibchookskeeper "github.com/0xTFM/composable-cosmos/x/ibc-hooks/keeper"
-	ibchookstypes "github.com/0xTFM/composable-cosmos/x/ibc-hooks/types"
-	stakingmiddleware "github.com/0xTFM/composable-cosmos/x/stakingmiddleware/keeper"
-	stakingmiddlewaretypes "github.com/0xTFM/composable-cosmos/x/stakingmiddleware/types"
+	ibc_hooks "github.com/tfm-com/composable/x/ibc-hooks"
+	ibchookskeeper "github.com/tfm-com/composable/x/ibc-hooks/keeper"
+	ibchookstypes "github.com/tfm-com/composable/x/ibc-hooks/types"
+	stakingmiddleware "github.com/tfm-com/composable/x/stakingmiddleware/keeper"
+	stakingmiddlewaretypes "github.com/tfm-com/composable/x/stakingmiddleware/types"
 
-	ibctransfermiddleware "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/keeper"
-	ibctransfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
+	ibctransfermiddleware "github.com/tfm-com/composable/x/ibctransfermiddleware/keeper"
+	ibctransfermiddlewaretypes "github.com/tfm-com/composable/x/ibctransfermiddleware/types"
 )
 
 const (

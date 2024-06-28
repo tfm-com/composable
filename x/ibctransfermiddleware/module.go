@@ -16,9 +16,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/client/cli"
-	"github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/keeper"
-	"github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
+	"github.com/tfm-com/composable/x/ibctransfermiddleware/client/cli"
+	"github.com/tfm-com/composable/x/ibctransfermiddleware/keeper"
+	"github.com/tfm-com/composable/x/ibctransfermiddleware/types"
 )
 
 var (

@@ -16,9 +16,9 @@ import (
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/spf13/cobra"
 
-	"github.com/0xTFM/composable-cosmos/x/transfermiddleware/client/cli"
-	"github.com/0xTFM/composable-cosmos/x/transfermiddleware/keeper"
-	"github.com/0xTFM/composable-cosmos/x/transfermiddleware/types"
+	"github.com/tfm-com/composable/x/transfermiddleware/client/cli"
+	"github.com/tfm-com/composable/x/transfermiddleware/keeper"
+	"github.com/tfm-com/composable/x/transfermiddleware/types"
 )
 
 var (

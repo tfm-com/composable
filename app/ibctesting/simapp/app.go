@@ -90,9 +90,9 @@ import (
 	"github.com/gorilla/mux"
 
 	// TODO: mint module not complete yet,
-	"github.com/0xTFM/composable-cosmos/x/mint"
-	mintkeeper "github.com/0xTFM/composable-cosmos/x/mint/keeper"
-	minttypes "github.com/0xTFM/composable-cosmos/x/mint/types"
+	"github.com/tfm-com/composable/x/mint"
+	mintkeeper "github.com/tfm-com/composable/x/mint/keeper"
+	minttypes "github.com/tfm-com/composable/x/mint/types"
 
 	"github.com/rakyll/statik/fs"
 	"github.com/spf13/cast"
@@ -124,15 +124,15 @@ import (
 	ibcmock "github.com/cosmos/ibc-go/v7/testing/mock"
 	ibctestingtypes "github.com/cosmos/ibc-go/v7/testing/types"
 
-	simappparams "github.com/0xTFM/composable-cosmos/app/ibctesting/simapp/params"
-	simappupgrades "github.com/0xTFM/composable-cosmos/app/ibctesting/simapp/upgrades"
-	v6 "github.com/0xTFM/composable-cosmos/app/ibctesting/simapp/upgrades/v6"
-	v7 "github.com/0xTFM/composable-cosmos/app/ibctesting/simapp/upgrades/v7"
-	ibctransfermiddleware "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/keeper"
-	ibctransfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
-	transfermiddleware "github.com/0xTFM/composable-cosmos/x/transfermiddleware"
-	transfermiddlewarekeeper "github.com/0xTFM/composable-cosmos/x/transfermiddleware/keeper"
-	transfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/transfermiddleware/types"
+	simappparams "github.com/tfm-com/composable/app/ibctesting/simapp/params"
+	simappupgrades "github.com/tfm-com/composable/app/ibctesting/simapp/upgrades"
+	v6 "github.com/tfm-com/composable/app/ibctesting/simapp/upgrades/v6"
+	v7 "github.com/tfm-com/composable/app/ibctesting/simapp/upgrades/v7"
+	ibctransfermiddleware "github.com/tfm-com/composable/x/ibctransfermiddleware/keeper"
+	ibctransfermiddlewaretypes "github.com/tfm-com/composable/x/ibctransfermiddleware/types"
+	transfermiddleware "github.com/tfm-com/composable/x/transfermiddleware"
+	transfermiddlewarekeeper "github.com/tfm-com/composable/x/transfermiddleware/keeper"
+	transfermiddlewaretypes "github.com/tfm-com/composable/x/transfermiddleware/types"
 )
 
 const appName = "SimApp"

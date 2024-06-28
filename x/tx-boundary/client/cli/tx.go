@@ -3,11 +3,11 @@ package cli
 import (
 	"strconv"
 
-	"github.com/0xTFM/composable-cosmos/x/tx-boundary/types"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/client/tx"
 	"github.com/spf13/cobra"
+	"github.com/tfm-com/composable/x/tx-boundary/types"
 )
 
 // GetTxCmd returns the tx commands for tx-boundary

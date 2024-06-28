@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
+	"github.com/tfm-com/composable/x/ibctransfermiddleware/types"
 )
 
 var _ types.QueryServer = Keeper{}

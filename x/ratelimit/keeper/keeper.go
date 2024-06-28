@@ -10,8 +10,8 @@ import (
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
 	porttypes "github.com/cosmos/ibc-go/v7/modules/core/05-port/types"
 
-	"github.com/0xTFM/composable-cosmos/x/ratelimit/types"
-	tfmwkeeper "github.com/0xTFM/composable-cosmos/x/transfermiddleware/keeper"
+	"github.com/tfm-com/composable/x/ratelimit/types"
+	tfmwkeeper "github.com/tfm-com/composable/x/transfermiddleware/keeper"
 )
 
 type Keeper struct {

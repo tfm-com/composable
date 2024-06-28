@@ -33,8 +33,8 @@ import (
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 	genutiltypes "github.com/cosmos/cosmos-sdk/x/genutil/types"
 
-	"github.com/0xTFM/composable-cosmos/app"
-	// "github.com/0xTFM/composable-cosmos/app/params"
+	"github.com/tfm-com/composable/app"
+	// "github.com/tfm-com/composable/app/params"
 	// this line is used by starport scaffolding # stargate/root/import
 )
 

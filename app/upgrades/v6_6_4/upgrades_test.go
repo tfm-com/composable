@@ -6,13 +6,12 @@ import (
 	"testing"
 	"time"
 
-	ibchookskeeper "github.com/0xTFM/composable-cosmos/x/ibc-hooks/keeper"
-	ibctransfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
+	ibchookskeeper "github.com/tfm-com/composable/x/ibc-hooks/keeper"
+	ibctransfermiddlewaretypes "github.com/tfm-com/composable/x/ibctransfermiddleware/types"
 
-	"github.com/0xTFM/composable-cosmos/app/upgrades/v6_6_4"
+	"github.com/tfm-com/composable/app/upgrades/v6_6_4"
 
 	"cosmossdk.io/math"
-	ibchookstypes "github.com/0xTFM/composable-cosmos/x/ibc-hooks/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/bech32"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
@@ -23,11 +22,12 @@ import (
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	routertypes "github.com/cosmos/ibc-apps/middleware/packet-forward-middleware/v7/packetforward/types"
+	ibchookstypes "github.com/tfm-com/composable/x/ibc-hooks/types"
 
-	apptesting "github.com/0xTFM/composable-cosmos/app"
-	"github.com/0xTFM/composable-cosmos/bech32-migration/utils"
 	"github.com/stretchr/testify/suite"
 	alliancetypes "github.com/terra-money/alliance/x/alliance/types"
+	apptesting "github.com/tfm-com/composable/app"
+	"github.com/tfm-com/composable/bech32-migration/utils"
 )
 
 const (

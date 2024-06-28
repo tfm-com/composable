@@ -10,8 +10,8 @@ import (
 	clienttypes "github.com/cosmos/ibc-go/v7/modules/core/02-client/types"
 	"github.com/stretchr/testify/suite"
 
-	customibctesting "github.com/0xTFM/composable-cosmos/app/ibctesting"
-	ibchookskeeper "github.com/0xTFM/composable-cosmos/x/ibc-hooks/keeper"
+	customibctesting "github.com/tfm-com/composable/app/ibctesting"
+	ibchookskeeper "github.com/tfm-com/composable/x/ibc-hooks/keeper"
 )
 
 // TODO: use testsuite here.

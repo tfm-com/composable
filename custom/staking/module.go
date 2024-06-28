@@ -11,9 +11,9 @@ import (
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	// custombankkeeper "github.com/0xTFM/composable-cosmos/custom/bank/keeper"
-	customstakingkeeper "github.com/0xTFM/composable-cosmos/custom/staking/keeper"
+	// custombankkeeper "github.com/tfm-com/composable/custom/bank/keeper"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	customstakingkeeper "github.com/tfm-com/composable/custom/staking/keeper"
 )
 
 // AppModule wraps around the bank module and the bank keeper to return the right total supply

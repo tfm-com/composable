@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/0xTFM/composable-cosmos/app/upgrades/v6_6_4"
+	"github.com/tfm-com/composable/app/upgrades/v6_6_4"
 
 	nodeservice "github.com/cosmos/cosmos-sdk/client/grpc/node"
 	authante "github.com/cosmos/cosmos-sdk/x/auth/ante"
@@ -37,7 +37,7 @@ import (
 	vestingtypes "github.com/cosmos/cosmos-sdk/x/auth/vesting/types"
 	"github.com/cosmos/cosmos-sdk/x/bank"
 
-	"github.com/0xTFM/composable-cosmos/app/keepers"
+	"github.com/tfm-com/composable/app/keepers"
 
 	// bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 
@@ -75,8 +75,6 @@ import (
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	"github.com/cosmos/cosmos-sdk/x/staking"
 
-	customibctransfer "github.com/0xTFM/composable-cosmos/custom/ibc-transfer"
-	customstaking "github.com/0xTFM/composable-cosmos/custom/staking"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	"github.com/cosmos/cosmos-sdk/x/upgrade"
 	upgradeclient "github.com/cosmos/cosmos-sdk/x/upgrade/client"
@@ -93,6 +91,8 @@ import (
 	"github.com/spf13/cast"
 	icq "github.com/strangelove-ventures/async-icq/v7"
 	icqtypes "github.com/strangelove-ventures/async-icq/v7/types"
+	customibctransfer "github.com/tfm-com/composable/custom/ibc-transfer"
+	customstaking "github.com/tfm-com/composable/custom/staking"
 
 	router "github.com/cosmos/ibc-apps/middleware/packet-forward-middleware/v7/packetforward"
 	routertypes "github.com/cosmos/ibc-apps/middleware/packet-forward-middleware/v7/packetforward/types"
@@ -100,37 +100,37 @@ import (
 	alliancemoduleclient "github.com/terra-money/alliance/x/alliance/client"
 	alliancemoduletypes "github.com/terra-money/alliance/x/alliance/types"
 
-	custombankmodule "github.com/0xTFM/composable-cosmos/custom/bank"
+	custombankmodule "github.com/tfm-com/composable/custom/bank"
 
-	"github.com/0xTFM/composable-cosmos/app/ante"
-	"github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware"
-	"github.com/0xTFM/composable-cosmos/x/stakingmiddleware"
-	transfermiddleware "github.com/0xTFM/composable-cosmos/x/transfermiddleware"
-	transfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/transfermiddleware/types"
+	"github.com/tfm-com/composable/app/ante"
+	"github.com/tfm-com/composable/x/ibctransfermiddleware"
+	"github.com/tfm-com/composable/x/stakingmiddleware"
+	transfermiddleware "github.com/tfm-com/composable/x/transfermiddleware"
+	transfermiddlewaretypes "github.com/tfm-com/composable/x/transfermiddleware/types"
 
-	txBoundary "github.com/0xTFM/composable-cosmos/x/tx-boundary"
-	txBoundaryTypes "github.com/0xTFM/composable-cosmos/x/tx-boundary/types"
+	txBoundary "github.com/tfm-com/composable/x/tx-boundary"
+	txBoundaryTypes "github.com/tfm-com/composable/x/tx-boundary/types"
 
-	ratelimitmodule "github.com/0xTFM/composable-cosmos/x/ratelimit"
-	ratelimitmoduletypes "github.com/0xTFM/composable-cosmos/x/ratelimit/types"
+	ratelimitmodule "github.com/tfm-com/composable/x/ratelimit"
+	ratelimitmoduletypes "github.com/tfm-com/composable/x/ratelimit/types"
 
 	consensusparamtypes "github.com/cosmos/cosmos-sdk/x/consensus/types"
 
-	"github.com/0xTFM/composable-cosmos/x/mint"
-	minttypes "github.com/0xTFM/composable-cosmos/x/mint/types"
+	"github.com/tfm-com/composable/x/mint"
+	minttypes "github.com/tfm-com/composable/x/mint/types"
 
 	ibctestingtypes "github.com/cosmos/ibc-go/v7/testing/types"
 
-	ibc_hooks "github.com/0xTFM/composable-cosmos/x/ibc-hooks"
-	ibchookstypes "github.com/0xTFM/composable-cosmos/x/ibc-hooks/types"
+	ibc_hooks "github.com/tfm-com/composable/x/ibc-hooks"
+	ibchookstypes "github.com/tfm-com/composable/x/ibc-hooks/types"
 
 	"github.com/CosmWasm/wasmd/x/wasm"
 	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
 	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
 
-	upgrades "github.com/0xTFM/composable-cosmos/app/upgrades"
-	ibctransfermiddlewaretypes "github.com/0xTFM/composable-cosmos/x/ibctransfermiddleware/types"
-	stakingmiddlewaretypes "github.com/0xTFM/composable-cosmos/x/stakingmiddleware/types"
+	upgrades "github.com/tfm-com/composable/app/upgrades"
+	ibctransfermiddlewaretypes "github.com/tfm-com/composable/x/ibctransfermiddleware/types"
+	stakingmiddlewaretypes "github.com/tfm-com/composable/x/stakingmiddleware/types"
 )
 
 const (
